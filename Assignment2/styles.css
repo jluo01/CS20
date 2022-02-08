@@ -52,7 +52,8 @@ h1{
     font: 35px black;
     font-family: 'Courier New', Courier, monospace;
 }
-#container {
+body {
+    display:inline-block;
     background-image: url(HalliganFront.jpg);
     background-size:cover;
     width:100%;
@@ -64,11 +65,13 @@ h1{
     #naviTable{
         margin-top: 14em;
     }
-    #container{
+    body{
+        background-position: center;
+        display:inline-block;
         width:100%;
         max-width:200px;
-        background-size:cover; 
-        width: auto;
+        background-size:cover;
+        background-attachment: fixed; 
     }
     #mainContent {
         top:20%;
