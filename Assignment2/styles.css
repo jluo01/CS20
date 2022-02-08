@@ -1,0 +1,82 @@
+#naviTable{
+    margin-top: 12em;
+    margin-left: 2em;
+    border: 10px black;
+    border-right:solid;
+    background-color: rgba(172, 179, 189,0.7);
+}
+td{
+    /* padding:2em;*/
+    border-color: black;
+    text-align:center;
+}
+.naviButtons {
+    padding:5%;
+    font-size: 40px; 
+    font-family: 'Courier New', Courier, monospace;
+    background-color: transparent;
+    border: none; 
+    text-align: center;
+    color:#487975;
+}
+.naviButtons:hover {
+    font-size: 40px; 
+    background-color: rgb(57, 72, 100);
+    border: none;
+    text-align: center;
+    color:white;
+}
+#titleHeader {
+    position: absolute;
+    top: 0.5em;
+    margin: 0.5em;
+    max-width: auto;
+    /*font-weight:bold;*/
+    font-size: 60px;
+    font-family: 'Courier New', Courier, monospace;
+    color: #2f3032;
+}
+h1{
+    position: absolute;
+    font-family: 'Courier New', Courier, monospace;
+    margin: 1em; 
+    top:3.3em; 
+    color: #2f3032; 
+}
+#mainContent {
+    position:absolute;
+    top:30%;
+    padding:0.5em; 
+    background-color: rgba(188, 193, 196,0.9);
+    margin-left: 300px;
+    font: 35px black;
+    font-family: 'Courier New', Courier, monospace;
+}
+#container {
+    background-image: url(HalliganFront.jpg);
+    background-size:cover;
+    width:100%;
+    max-width:fit-content;
+    background-repeat:no-repeat;
+}
+
+@media (max-width: 1440px) { 
+    #naviTable{
+        margin-top: 14em;
+    }
+    #container{
+        width:100%;
+        max-width:200px;
+        background-size:cover; 
+        width: auto;
+    }
+    #mainContent {
+        top:20%;
+        padding:0; 
+        width:500px; 
+        background-color: rgba(188, 193, 196,0.9);
+        margin-left: 300px;
+        font: 35px black;
+        font-family: 'Courier New', Courier, monospace;
+    }
+} 
