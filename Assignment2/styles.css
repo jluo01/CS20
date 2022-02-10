@@ -9,7 +9,6 @@ nav {
     background-color: rgba(172, 179, 189,0.7);
 }
 td{
-    /* padding:2em;*/
     border-color: black;
     text-align:center;
 }
@@ -18,7 +17,7 @@ td{
     font-size: 40px; 
     font-family: 'Courier New', Courier, monospace;
     background-color: transparent;
-    border: none; 
+    border: none;
     text-align: center;
     color:#487975;
 }
@@ -34,7 +33,6 @@ td{
     top: 0.7em;
     margin: 0.5em;
     max-width: auto;
-    /*font-weight:bold;*/
     font-size: 60px;
     font-family: 'Courier New', Courier, monospace;
     color: #2f3032;
@@ -56,6 +54,7 @@ h1{
     font-family: 'Courier New', Courier, monospace;
 }
 body {
+    background-position: auto;
     display:inline-block;
     background-image: url(HalliganFront.jpg);
     background-size:cover;
@@ -63,9 +62,14 @@ body {
     max-width:fit-content;
     background-repeat:no-repeat;
 }
-
-/* https://developer.mozilla.org/en-US/docs/Web/CSS/@media/aspect-ratio */ 
-@media (max-aspect-ratio: 3/2) { 
+.is-mobile{display:none;}
+@media (max-height:1294){
+    body{
+        background-size:auto;
+    }
+}
+/* Use photo dimensions as aspect ratio to identify mobile */
+@media (max-aspect-ratio:1725/1294) { 
     body{
         background-position: center;
         display:inline-block;
@@ -76,25 +80,33 @@ body {
     }
     #mainContent {
         position:absolute;
-        top:7em;
+        top:12em;
         padding:0.5em; 
-        width: auto;
         background-color: rgba(188, 193, 196,0.9);
-        left: 1em;
         font: 35px black;
         font-family: 'Courier New', Courier, monospace;
+    }
+
+    .is-mobile{display:block;}
+    .no-mobile{display:none;}
+    td{
+        padding-left:1em;
+        padding-right:1em;
+        border-color: black;
+        text-align:center;
+    }
+    #naviTable{
+        position:relative;
+        background-color: rgba(172, 179, 189,0.9);
+    }
+    .naviButtons {
+        padding:10%;
+        font-size: 40px; 
+        font-family: 'Courier New', Courier, monospace;
+        background-color: transparent;
+        border: none;
+        text-align: center;
+        color:#487975;
     }
 } 
 
-@media (max-aspect-ratio: 1) {
-    #mainContent {
-        position:absolute;
-        top:7em;
-        padding:0.5em; 
-        width: auto;
-        background-color: rgba(188, 193, 196,0.9);
-        left: 1em;
-        font: 35px black;
-        font-family: 'Courier New', Courier, monospace;
-    }
-}

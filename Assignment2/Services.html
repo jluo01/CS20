@@ -5,66 +5,101 @@
         <meta name=‘viewport’ content=“width=device-width, initial-scale=1”> 
         <title>Halligan Cookies-Services</title>
         <link rel="stylesheet" href="styles.css">
-        <!-- font CDN linking format-->
-        <!-- <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Font+Name"> -->
-         <!-- https://www.w3schools.com/css/css_rwd_images.asp --> 
-        <style>
-            body {
-                background-image: url(HalliganFront.jpg);
-                background-size:cover;
-                background-repeat:no-repeat;
+         <style>
+            h2 {
+                font-family: 'Courier New', Courier, monospace;
+                font-size:35px;
+                font-weight:bold;
+                color: #2f3032; 
             }
-        </style>
+         </style>
     </head>
 
-    <nav>
-        <table id = "naviTable">
-            <tbody>
-                <tr>
-                    <td>
-                        <a href = "HCookies.html">
-                            <button class= "naviButtons">
-                                Home <!-- https://www.freecodecamp.org/news/how-to-create-an-html-button-that-acts-like-a-link/ -->
-                            </button>
-                        </a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href = "Products.html">
-                            <button class = "naviButtons">
-                                Products
-                            </button>
-                        </a>
-                      </td>
-                </tr>
-                <tr>
-                    <td>
-                        <a href = "Services.html">
-                            <button class = "naviButtons" style = "font-size: 40px; 
-                            background-color: rgb(57, 72, 100);
-                            border: none;
-                            text-align: center;
-                            color:white;">
-                                Services
-                            </button>
-                        </a>
-                    </td>
-                </tr>
-                <tr>   
-                    <td>
-                        <a href = "ContactUs.html">
-                            <button class = "naviButtons">
-                                Contact Us
-                            </button>
-                        </a>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </nav>
-    
-    <body>
+    <body>  
+        <div class ='no-mobile'>
+            <nav>
+                <table id = "naviTable">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href = "HCookies.html">
+                                    <button class= "naviButtons">
+                                        Home 
+                                   </button>
+                                </a>
+                            </td> 
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href = "Products.html">
+                                    <button class = "naviButtons">
+                                        Products
+                                    </button>
+                                </a>
+                              </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <a href = "Services.html">
+                                    <button class = "naviButtons">
+                                        Services
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+                        <tr>   
+                            <td>
+                                <a href = "ContactUs.html">
+                                    <button class = "naviButtons">
+                                        Contact Us
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </nav>
+        </div>
+        
+        <div class = 'is-mobile'>
+            <nav>
+                <table id = "naviTable">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <a href = "HCookies.html">
+                                    <button class= "naviButtons">
+                                        Home 
+                                   </button>
+                                </a>
+                            </td> 
+                            <td>
+                                <a href = "Products.html">
+                                    <button class = "naviButtons">
+                                        Products
+                                    </button>
+                                </a>
+                              </td>
+                              <td>
+                                <a href = "Services.html">
+                                    <button class = "naviButtons">
+                                        Services
+                                    </button>
+                                </a>
+                            </td>
+                            <td>
+                                <a href = "ContactUs.html">
+                                    <button class = "naviButtons">
+                                        Contact Us
+                                    </button>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </nav> 
+        </div>
+
         <header id = "titleHeader">
             Halligan Cookies
         </header>
@@ -73,9 +108,13 @@
             for hungry students! 
         </h1>
         <div id = "mainContent">
-            <h3>
+            <h2>
                 Services:
-            </h3>
+            </h2>
+            We offer catering and special order services on request. Please fill out 
+            the "contact us" so that we can have an initial consultation. 
+            Due to the nature of our work, we cannot guarantee that we will 
+            accomodate requests made within 24 hours of the target deadline. 
         </div>
     </body>
 
