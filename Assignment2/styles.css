@@ -2,13 +2,13 @@ nav {
     position:absolute; 
     top:15em;
 }
-#naviTable{
+#naviTable {
     margin-left: 2em;
     border: 10px black;
     border-right:solid;
-    background-color: rgba(172, 179, 189,0.7);
+    background-color: rgba(172, 179, 189,0.8);
 }
-td{
+td {
     border-color: black;
     text-align:center;
 }
@@ -20,6 +20,7 @@ td{
     border: none;
     text-align: center;
     color:#487975;
+    font-weight: bold;
 }
 .naviButtons:hover {
     font-size: 40px; 
@@ -37,7 +38,7 @@ td{
     font-family: 'Courier New', Courier, monospace;
     color: #2f3032;
 }
-h1{
+h1 {
     position: absolute;
     font-family: 'Courier New', Courier, monospace;
     margin: 1em; 
@@ -50,33 +51,30 @@ h1{
     padding:0.5em; 
     background-color: rgba(188, 193, 196,0.9);
     margin-left: 300px;
+    min-height:600px;
     font: 35px black;
     font-family: 'Courier New', Courier, monospace;
 }
 body {
-    background-position: auto;
+    background-position:auto;
     display:inline-block;
     background-image: url(HalliganFront.jpg);
     background-size:cover;
     width:100%;
     max-width:fit-content;
     background-repeat:no-repeat;
+    background-attachment: fixed; 
 }
-.is-mobile{display:none;}
-@media (max-height:1294){
-    body{
-        background-size:auto;
+
+.is-mobile{
+    display:none;
+}
+@media (max-aspect-ratio:3/2) {
+    .is-mobile{
+        display:block;
     }
-}
-/* Use photo dimensions as aspect ratio to identify mobile */
-@media (max-aspect-ratio:1725/1294) { 
-    body{
-        background-position: center;
-        display:inline-block;
-        width:100%;
-        max-width:200px;
-        background-size:cover;
-        background-attachment: fixed; 
+    .no-mobile{
+        display:none;
     }
     #mainContent {
         position:absolute;
@@ -86,16 +84,13 @@ body {
         font: 35px black;
         font-family: 'Courier New', Courier, monospace;
     }
-
-    .is-mobile{display:block;}
-    .no-mobile{display:none;}
-    td{
+    td {
         padding-left:1em;
         padding-right:1em;
         border-color: black;
         text-align:center;
     }
-    #naviTable{
+    #naviTable {
         position:relative;
         background-color: rgba(172, 179, 189,0.9);
     }
@@ -108,5 +103,4 @@ body {
         text-align: center;
         color:#487975;
     }
-} 
-
+}
