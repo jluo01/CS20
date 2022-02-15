@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href = "weddingStyle.css"?>
+
+<!--https://www.bostoncommonband.com/recent-play-song-list/-->
+
+<Songs> 
+    <Song>
+        <Artist>Adele</Artist>
+        <title>Make You Feel My Love</title>
+        <genre>Jazz Standard / Special Dances </genre>
+        <year>2010s </year>
+    </Song>
+    <Song>
+        <Artist>Adele</Artist>
+        <title>Rollin In The Deep</title>
+        <genre>Hot 100 / Top 40</genre>
+        <year>2010s</year>
+    </Song>
+    <Song>
+        <Artist>Celine Dion</Artist> 
+        <title>Because You Loved Me</title>
+        <genre>Jazz Standards / Special Dances</genre>
+        <year>2000s</year>
+    </Song>
+    <Song>
+        <Artist>Adele</Artist>
+        <title>Rollin In The Deep</title>
+        <genre>Hot 100 / Top 40</genre>
+        <year>2010s</year>
+    </Song>
+    <Song>
+        <Artist>Chainsmokers</Artist>
+        <title>Closer</title>
+        <genre>Hot 100 / Top 40</genre>
+        <year>2010s</year>
+    </Song>
+    <Song>
+        <Artist>Earth Wind &#38; Fire</Artist> 
+        <title>September</title>
+        <genre>R&#38;B / Motown</genre>
+        <year>1970s</year>
+    </Song>
+    <Song>
+        <Artist>Toto</Artist>
+        <title>Africa</title>
+        <genre>Rock</genre>
+        <year>1980s</year>
+    </Song>
+    <song>
+        <Artist>Aretha Franklin</Artist>
+        <title>Aint Nobody</title>
+        <genre>R&#38;B / Motown</genre>
+        <year>1980s</year>
+    </song>
+    <song>
+        <Artist>Etta James</Artist>
+        <title>At Last</title>
+        <genre>Jazz Standard / Special Dances</genre>
+        <year>1960s</year>
+    </song>
+    <song>
+        <Artist>Michael Buble</Artist>
+        <title>Everything</title>
+        <genre>Jazz Standard / Special Dances</genre>
+        <year>2000s</year>
+    </song>
+</Songs>

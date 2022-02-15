@@ -1,0 +1,26 @@
+Songs{
+    font-family:Arial, Helvetica, sans-serif;
+    display:block;
+}
+Artist{
+    color:rgb(0, 190, 190);
+    font-size:large;
+    font-weight: bold;
+    display: block;
+}
+title{
+    color:teal;
+    font-size:large;
+    display: block;
+}
+genre{
+    color:gray;
+    font-size:small;
+    display: block;
+}
+year{
+    color:yellowgreen;
+    font-size:small;
+    display: block;
+    padding-bottom:2em;
+}
