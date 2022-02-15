@@ -5,7 +5,9 @@
 
 <Songs> 
     <Song>
-        <Artist>Adele</Artist>
+        <Artists>
+            <Artist>Adele</Artist>
+        </Artists>
         <title>Make You Feel My Love</title>
         <genres>
             <genre>Jazz Standard</genre>
@@ -14,7 +16,9 @@
         <year>2010s </year>
     </Song>
     <Song>
-        <Artist>Adele</Artist>
+        <Artists>
+            <Artist>Adele</Artist>
+        </Artists>
         <title>Rollin In The Deep</title>
         <genres>
             <genre>Hot 100</genre>
@@ -23,7 +27,9 @@
         <year>2010s</year>
     </Song>
     <Song>
-        <Artist>Celine Dion</Artist> 
+        <Artists>
+            <Artist>Celine Dion</Artist>
+        </Artists>
         <title>Because You Loved Me</title>
         <genres>
             <genre>Jazz Standard</genre>
@@ -32,7 +38,9 @@
         <year>2000s</year>
     </Song>
     <Song>
-        <Artist>Adele</Artist>
+        <Artists>
+            <Artist>Adele</Artist>
+        </Artists>
         <title>Rollin In The Deep</title>
         <genres>
             <genre>Hot 100</genre>
@@ -41,7 +49,9 @@
         <year>2010s</year>
     </Song>
     <Song>
-        <Artist>Chainsmokers</Artist>
+        <Artists>
+            <Artist>Chainsmokers</Artist>
+        </Artists>
         <title>Closer</title>
         <genres>
             <genre>Hot 100</genre>
@@ -50,7 +60,9 @@
         <year>2010s</year>
     </Song>
     <Song>
-        <Artist>Earth Wind &#38; Fire</Artist> 
+        <Artists>
+            <Artist>Earth Wind &#38; Fire</Artist> 
+        </Artists>
         <title>September</title>
         <genres>
             <genre>R&#38;B</genre>
@@ -59,7 +71,9 @@
         <year>1970s</year>
     </Song>
     <Song>
-        <Artist>Toto</Artist>
+        <Artists>
+            <Artist>Toto</Artist>
+        </Artists>
         <title>Africa</title>
         <genres>
             <genre>Rock</genre>
@@ -67,7 +81,9 @@
         <year>1980s</year>
     </Song>
     <song>
-        <Artist>Aretha Franklin</Artist>
+        <Artists>
+            <Artist>Aretha Franklin</Artist>
+        </Artists>
         <title>Aint Nobody</title>
         <genres>
             <genre>R&#38;B</genre>
@@ -76,7 +92,9 @@
         <year>1980s</year>
     </song>
     <song>
-        <Artist>Etta James</Artist>
+        <Artists>
+            <Artist>Etta James</Artist>
+        </Artists>
         <title>At Last</title>
         <genres>
             <genre>Jazz Standard</genre>
@@ -85,7 +103,9 @@
         <year>1960s</year>
     </song>
     <song>
-        <Artist>Michael Buble</Artist>
+        <Artists>
+            <Artist>Michael Buble</Artist>
+        </Artists>
         <title>Everything</title>
         <genres>
             <genre>Jazz Standard</genre>
