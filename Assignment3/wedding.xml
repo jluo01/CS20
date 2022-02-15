@@ -7,61 +7,90 @@
     <Song>
         <Artist>Adele</Artist>
         <title>Make You Feel My Love</title>
-        <genre>Jazz Standard / Special Dances </genre>
+        <genres>
+            <genre>Jazz Standard</genre>
+            <genre>Special Dances</genre>
+        </genres>
         <year>2010s </year>
     </Song>
     <Song>
         <Artist>Adele</Artist>
         <title>Rollin In The Deep</title>
-        <genre>Hot 100 / Top 40</genre>
+        <genres>
+            <genre>Hot 100</genre>
+            <genre>Top 40</genre>
+        </genres>
         <year>2010s</year>
     </Song>
     <Song>
         <Artist>Celine Dion</Artist> 
         <title>Because You Loved Me</title>
-        <genre>Jazz Standards / Special Dances</genre>
+        <genres>
+            <genre>Jazz Standard</genre>
+            <genre>Special Dances</genre>
+        </genres>
         <year>2000s</year>
     </Song>
     <Song>
         <Artist>Adele</Artist>
         <title>Rollin In The Deep</title>
-        <genre>Hot 100 / Top 40</genre>
+        <genres>
+            <genre>Hot 100</genre>
+            <genre>Top 40</genre>
+        </genres>
         <year>2010s</year>
     </Song>
     <Song>
         <Artist>Chainsmokers</Artist>
         <title>Closer</title>
-        <genre>Hot 100 / Top 40</genre>
+        <genres>
+            <genre>Hot 100</genre>
+            <genre>Top 40</genre>
+        </genres>
         <year>2010s</year>
     </Song>
     <Song>
         <Artist>Earth Wind &#38; Fire</Artist> 
         <title>September</title>
-        <genre>R&#38;B / Motown</genre>
+        <genres>
+            <genre>R&#38;B</genre>
+            <genre>Motown</genre>
+        </genres>
         <year>1970s</year>
     </Song>
     <Song>
         <Artist>Toto</Artist>
         <title>Africa</title>
-        <genre>Rock</genre>
+        <genres>
+            <genre>Rock</genre>
+        </genres>
         <year>1980s</year>
     </Song>
     <song>
         <Artist>Aretha Franklin</Artist>
         <title>Aint Nobody</title>
-        <genre>R&#38;B / Motown</genre>
+        <genres>
+            <genre>R&#38;B</genre>
+            <genre>Motown</genre>
+        </genres>
         <year>1980s</year>
     </song>
     <song>
         <Artist>Etta James</Artist>
         <title>At Last</title>
-        <genre>Jazz Standard / Special Dances</genre>
+        <genres>
+            <genre>Jazz Standard</genre>
+            <genre>Special Dances</genre>
+        </genres>
         <year>1960s</year>
     </song>
     <song>
         <Artist>Michael Buble</Artist>
         <title>Everything</title>
-        <genre>Jazz Standard / Special Dances</genre>
+        <genres>
+            <genre>Jazz Standard</genre>
+            <genre>Special Dances</genre>
+        </genres>
         <year>2000s</year>
     </song>
 </Songs>
