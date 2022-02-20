@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Joe's Hotdogs</title>
+        <meta name=‘viewport’ content=“width=device-width, initial-scale=1”> 
+        <style>
+            h1 {
+                color:green;
+            }
+            table{
+                position:relative;
+                border: 1px black solid;
+                font-size: large;
+            }
+            td{
+                border:1px black solid;
+                padding:0.5em;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>
+            Items Ordered: 
+        </h1>
+
+        <table>
+            <tbody>
+                <script>
+                    function rounder(toRound){
+                        //Rounding function written without external function
+                        if (toRound%0.01 >= 0.05){
+                            return toRound + (1 - toRound%0.01);//Round Up
+                        }
+                        return toRound -(toRound%0.01);//Round Down
+                    }
+                    //Parseint to prevent unexpected data types
+                    numHotdogs = parseInt(prompt("How many hot dogs? ($3.75 each)"));
+                    numFries = parseInt(prompt("How many fries? ($2.00 each)"));
+                    numSodas = parseInt(prompt("How many sodas? ($1.80 each)"));
+        
+                    subtotal = (numHotdogs*3.75) + (numFries*2) + (numSodas*1.8);
+        
+                    discount = rounder(subtotal >= 20 ? (subtotal*0.1):(0));
+                    tax = rounder((subtotal-discount)*0.0625);
+                    
+                    finalTotal = subtotal - discount + tax; 
+                    document.write("<tr> <td> Hot Dogs:</td> <td>" + numHotdogs + "</td>");
+                    document.write("<tr> <td> Fries:</td> <td>" + numFries + "</td>");
+                    document.write("<tr> <td> Sodas:</td> <td>" + numSodas + "</td>");
+        
+                    document.write("<tr> <td> Subtotal:</td> <td>$" + subtotal.toFixed(2) + "</td>");
+                    document.write("<tr> <td> Discount:</td> <td>$" + discount.toFixed(2) + "</td>");
+                    document.write("<tr> <td> Tax:</td> <td>$" + tax.toFixed(2) + "</td>");
+                    document.write("<tr> <td> Final Total:</td> <td>$" + finalTotal.toFixed(2) + "</td>");
+                </script>
+            </tbody>
+        </table>
+            
+        
+    </body>
+
+
+
+</html>
