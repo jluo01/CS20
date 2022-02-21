@@ -7,15 +7,23 @@
         <style>
             h1 {
                 color:green;
+                font-size:4vmax;
             }
             table{
-                position:relative;
+                position:absolute;
+                height:80%;
+                width:100%;
                 border: 1px black solid;
-                font-size: large;
+                font-size:3vmax;
             }
             td{
                 border:1px black solid;
                 padding:0.5em;
+            }
+            @media (max-width:600px) {
+                td{
+                padding:0.1em;
+                }
             }
         </style>
     </head>
@@ -29,27 +37,25 @@
             <tbody>
                 <script>
                     function rounder(toRound){
-                        //Rounding function written without external function
-                        if (toRound%0.01 >= 0.05){
-                            return toRound + (1 - toRound%0.01);//Round Up
-                        }
-                        return toRound -(toRound%0.01);//Round Down
+                        return Math.round(toRound*100)/100;
                     }
-                    //Parseint to prevent unexpected data types
+
+                    //Parseint to prevent unexpected data types - also prevents decimal entry
                     numHotdogs = parseInt(prompt("How many hot dogs? ($3.75 each)"));
                     numFries = parseInt(prompt("How many fries? ($2.00 each)"));
                     numSodas = parseInt(prompt("How many sodas? ($1.80 each)"));
         
+                    //Calculations
                     subtotal = (numHotdogs*3.75) + (numFries*2) + (numSodas*1.8);
-        
                     discount = rounder(subtotal >= 20 ? (subtotal*0.1):(0));
-                    tax = rounder((subtotal-discount)*0.0625);
-                    
+                    tax = rounder((subtotal-discount)*0.0625);    
                     finalTotal = subtotal - discount + tax; 
+
+                    //Write to page
                     document.write("<tr> <td> Hot Dogs:</td> <td>" + numHotdogs + "</td>");
                     document.write("<tr> <td> Fries:</td> <td>" + numFries + "</td>");
                     document.write("<tr> <td> Sodas:</td> <td>" + numSodas + "</td>");
-        
+                    //toFixed to force number of float decimals
                     document.write("<tr> <td> Subtotal:</td> <td>$" + subtotal.toFixed(2) + "</td>");
                     document.write("<tr> <td> Discount:</td> <td>$" + discount.toFixed(2) + "</td>");
                     document.write("<tr> <td> Tax:</td> <td>$" + tax.toFixed(2) + "</td>");
