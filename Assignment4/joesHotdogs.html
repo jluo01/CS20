@@ -4,25 +4,32 @@
     <head>
         <title>Joe's Hotdogs</title>
         <meta name=‘viewport’ content=“width=device-width, initial-scale=1”> 
+        
         <style>
             h1 {
                 color:green;
                 font-size:4vmax;
             }
-            table{
-                position:absolute;
-                height:80%;
-                width:100%;
+
+            table {
+                max-height:50%;
+                max-width:80%;
                 border: 1px black solid;
                 font-size:3vmax;
+                font-family:Arial, Helvetica, sans-serif;
             }
+
             td{
                 border:1px black solid;
                 padding:0.5em;
             }
-            @media (max-width:600px) {
-                td{
-                padding:0.1em;
+
+            @media (max-width: 600px) {
+                h1 {
+                    color: black;
+                }
+                td {
+                    font-family:'Times New Roman', Times, serif;
                 }
             }
         </style>
@@ -35,7 +42,8 @@
 
         <table>
             <tbody>
-                <script>
+                <script language="javascript">
+                    //Rounding function
                     function rounder(toRound){
                         return Math.round(toRound*100)/100;
                     }
@@ -44,20 +52,24 @@
                     numHotdogs = parseInt(prompt("How many hot dogs? ($3.75 each)"));
                     numFries = parseInt(prompt("How many fries? ($2.00 each)"));
                     numSodas = parseInt(prompt("How many sodas? ($1.80 each)"));
-        
-                    //Calculations
-                    subtotal = (numHotdogs*3.75) + (numFries*2) + (numSodas*1.8);
-                    discount = rounder(subtotal >= 20 ? (subtotal*0.1):(0));
-                    tax = rounder((subtotal-discount)*0.0625);    
-                    finalTotal = subtotal - discount + tax; 
-
+                    
                     //Write to page
                     document.write("<tr> <td> Hot Dogs:</td> <td>" + numHotdogs + "</td>");
                     document.write("<tr> <td> Fries:</td> <td>" + numFries + "</td>");
-                    document.write("<tr> <td> Sodas:</td> <td>" + numSodas + "</td>");
+                    document.write("<tr> <td> Sodas:</td> <td>" + numSodas + "</td>");       
+                    
+                    //Calculations
+                    subtotal = (numHotdogs*3.75) + (numFries*2) + (numSodas*1.8);
+                    document.write("<tr> <td> Subtotal (before discount):</td> <td>$" + subtotal.toFixed(2) + "</td>");
+                    
+                    discount = rounder(subtotal >= 20 ? (subtotal*0.1):(0));
+                    subtotal -= discount; 
+                    tax = rounder(subtotal*0.0625);    
+                    finalTotal = subtotal + tax; 
+
                     //toFixed to force number of float decimals
-                    document.write("<tr> <td> Subtotal:</td> <td>$" + subtotal.toFixed(2) + "</td>");
                     document.write("<tr> <td> Discount:</td> <td>$" + discount.toFixed(2) + "</td>");
+                    document.write("<tr> <td> Subtotal (after discount):</td> <td>$" + subtotal.toFixed(2) + "</td>");
                     document.write("<tr> <td> Tax:</td> <td>$" + tax.toFixed(2) + "</td>");
                     document.write("<tr> <td> Final Total:</td> <td>$" + finalTotal.toFixed(2) + "</td>");
                 </script>
