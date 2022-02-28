@@ -11,3 +11,4 @@ with some of my projects so far.
 <a href = "https://jluo01.github.io/CS20/Assignment3/wedding.xml"> Assignment 3: XML Wedding List </a>
 
 <a href = "https://jluo01.github.io/CS20/Assignment4/joesHotdogs.html"> Assignment 4: Joe's Hotdogs </a>
+<a href = "https://jluo01.github.io/CS20/Assignment5/LotterySim.html"> Assignment 5: Lottery Simulator</a>
