@@ -98,14 +98,14 @@
                         lotteryNums.push(Math.round(1+(Math.random()*47)));
                     }
                     var luckyBall = Math.round(1+Math.random()*17);  
-                    modifyElement("myPick", "My Pick: " + lotteryNums + " Lucky: " + luckyBall + "<br>");
+                    modifyElement("myPick", "My Pick: " + lotteryNums.join(' ') + " Lucky: " + luckyBall + "<br>");
                     //taken from Mozilla documentation
                     lotteryNums = lotteryNums.sort(function(a,b){return a-b;});
-                    modifyElement("sortMyPick", "My pick sorted: " + lotteryNums + " Lucky: " + luckyBall);
+                    modifyElement("sortMyPick", "My pick sorted: " + lotteryNums.join(' ') + " Lucky: " + luckyBall);
                     
                     wonLuckyBall = (luckyBall == winningCombination[numElements-1]) ? 1:0;
                     numMatching = validateWins(lotteryNums);
-                    modifyElement("winningNums", "Winning numbers: " + winningCombination.slice(0,5) + " Lucky: " + winningCombination[5]);    
+                    modifyElement("winningNums", "Winning numbers: " + winningCombination.slice(0,5).join(' ') + " Lucky: " + winningCombination[5]);    
                 }
                 else{
                     modifyElement("myPick", "Test Mode Enabled");
