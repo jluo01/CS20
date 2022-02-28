@@ -3,7 +3,7 @@
 <html>
     <head>
         <title>Lottery Sim</title>
-        <meta name=‘viewport’ content=“width=device-width, initial-scale=1”>
+        <meta name='viewport' content="width=device-width, initial-scale=1">
         <style>
             #box{
                 display:flex;
@@ -27,10 +27,12 @@
             @media (max-width:600px){
                 .buttonBox{
                     display:flex;
+                    flex-direction: column;
+                    max-width:600px;
                 }
                 .buttonStyle{
-                    height:2em;
-                    width:auto;
+                    height:4em;
+                    width:fit-content;
                 }
             }
         </style>
@@ -69,24 +71,24 @@
                             return winningsString = "NaN";
                     }
                 }
-            else{
-                switch(numMatching){    
-                    case 5: 
-                        return winningsString = "$25,000 a WEEK for LIFE"; 
-                    case 4: 
-                        return winningsString = "$200"; 
-                    case 3: 
-                        return winningsString = "$20"
-                    case 2:
-                        return winningsString = "$3";
-                    case 1: 
-                        return winningsString = "$0";
-                    case 0: 
-                        return winningsString = "$0";
-                    default: 
-                        return winningsString = "NaN";
+                else{
+                    switch(numMatching){    
+                        case 5: 
+                            return winningsString = "$25,000 a WEEK for LIFE"; 
+                        case 4: 
+                            return winningsString = "$200"; 
+                        case 3: 
+                            return winningsString = "$20"
+                        case 2:
+                            return winningsString = "$3";
+                        case 1: 
+                            return winningsString = "$0";
+                        case 0: 
+                            return winningsString = "$0";
+                        default: 
+                            return winningsString = "NaN";
+                        }
                     }
-                }
             }
             
             function simulate(testMode){
