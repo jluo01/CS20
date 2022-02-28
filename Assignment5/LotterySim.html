@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Lottery Sim</title>
+        <meta name=‘viewport’ content=“width=device-width, initial-scale=1”>
+        <style>
+            #box{
+                display:flex;
+                flex-direction: column;
+                margin:1em;
+                font-size:24pt;
+            }
+            .textBox{
+                padding-bottom:1em;
+            }
+            .resultsBox{
+                font-size:24pt;
+            }
+            .buttonStyle{
+                height:3em;
+                width:auto;
+                font-size:16pt;
+                background-color:#a8f1eb;
+                border-radius:10%;
+            }
+            @media (max-width:600px){
+                .buttonBox{
+                    display:flex;
+                }
+                .buttonStyle{
+                    height:2em;
+                    width:auto;
+                }
+            }
+        </style>
+        <script language="javascript">
+            const winningCombination = [12,15,24,35,48,3];//5 balls, 1 lucky at end 
+            const numElements = 5;//5 picks 
+
+            function validateWins(currentDraw){
+                var numMatching = 0;
+                for (i = 0; i < numElements; i++){
+                    if (winningCombination[i]==currentDraw[i])
+                    numMatching++;
+                }
+                return numMatching;
+            }
+            //Shorthand for getElementById
+            function modifyElement(nameElement,text){
+                document.getElementById(nameElement).innerHTML = text;
+            }
+            function outputString(numMatching,wonLuckyBall){
+                if(wonLuckyBall){
+                    switch(numMatching){
+                        case 5: 
+                            return winningsString = "$7,000 a WEEK for LIFE"; 
+                        case 4: 
+                            return winningsString = "$5,000"; 
+                        case 3: 
+                            return winningsString = "$150"
+                        case 2:
+                            return winningsString = "$25";
+                        case 1: 
+                            return winningsString = "$6";
+                        case 0: 
+                            return winningsString = "$4";
+                        default: 
+                            return winningsString = "NaN";
+                    }
+                }
+            else{
+                switch(numMatching){    
+                    case 5: 
+                        return winningsString = "$25,000 a WEEK for LIFE"; 
+                    case 4: 
+                        return winningsString = "$200"; 
+                    case 3: 
+                        return winningsString = "$20"
+                    case 2:
+                        return winningsString = "$3";
+                    case 1: 
+                        return winningsString = "$0";
+                    case 0: 
+                        return winningsString = "$0";
+                    default: 
+                        return winningsString = "NaN";
+                    }
+                }
+            }
+            
+            function simulate(testMode){
+                if (!testMode){
+                    var lotteryNums = [];
+                    for (i = 0; i < numElements ; i++){
+                        lotteryNums.push(Math.round(1+(Math.random()*47)));
+                    }
+                    var luckyBall = Math.round(1+Math.random()*17);  
+                    modifyElement("myPick", "My Pick: " + lotteryNums + " Lucky: " + luckyBall + "<br>");
+                    //taken from Mozilla documentation
+                    lotteryNums = lotteryNums.sort(function(a,b){return a-b;});
+                    modifyElement("sortMyPick", "My pick sorted: " + lotteryNums + " Lucky: " + luckyBall);
+                    
+                    wonLuckyBall = (luckyBall == winningCombination[numElements-1]) ? 1:0;
+                    numMatching = validateWins(lotteryNums);
+                    modifyElement("winningNums", "Winning numbers: " + winningCombination.slice(0,5) + " Lucky: " + winningCombination[5]);    
+                }
+                else{
+                    modifyElement("myPick", "Test Mode Enabled");
+                    modifyElement("sortMyPick","");
+                    modifyElement("winningNums","");
+                    numMatching = parseInt(prompt("Number matching?"));
+                    wonLuckyBall = parseInt(prompt("Won lucky ball (1 or 0 please)?"));
+                }
+
+            winningsString = outputString(numMatching,wonLuckyBall);
+
+             
+             modifyElement("numsMatching", "Numbers matching: " + numMatching);
+             modifyElement("luckyMatch", "Lucky ball matches:" + wonLuckyBall);
+             modifyElement("yourWinnings","Your winnings: " + winningsString);    
+        }
+        </script>
+    
+    </head>
+    <body style = "background-color: #e2fcfa;">
+        <h1 style="color:#173e67; font-size:48pt">Lottery Simulator</h1>
+        <div style = "color: #047841;font-size:24pt;">Hit the button to get a lottery draw
+            <div class = "buttonBox">
+                <input type = "button" class = "buttonStyle" value = "Pick Lottery Numbers!" name = "pickNums" onclick = "simulate(false)">
+                <input type = "button" class = "buttonStyle" value = "Test Mode" name = "testModeButton" onclick = "simulate(true)">
+            </div>
+        </div>
+        <div id = "box">
+            <div id = "myPick" class = "textBox"></div>
+            <div id = "sortMyPick" class = "textBox"></div>
+            <div id = "winningNums" class = "textBox"></div>
+        </div>
+        <div id = "numsMatching" class = "resultsBox"></div>
+        <div id = "luckyMatch" class = "resultsBox"></div>
+        <div id = "yourWinnings" class = "resultsBox" style ="font-weight:bold"></div>
+    </body>
+</html>
