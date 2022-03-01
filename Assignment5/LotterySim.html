@@ -94,8 +94,13 @@
             function simulate(testMode){
                 if (!testMode){
                     var lotteryNums = [];
-                    for (i = 0; i < numElements ; i++){
-                        lotteryNums.push(Math.round(1+(Math.random()*47)));
+                    i = 0; 
+                    while (i<numElements){
+                        temp = Math.round(1+(Math.random()*47));
+                        if (!lotteryNums.includes(temp)){
+                            lotteryNums.push(temp);
+                            i++;
+                        }   
                     }
                     var luckyBall = Math.round(1+Math.random()*17);  
                     modifyElement("myPick", "My Pick: " + lotteryNums.join(' ') + " Lucky: " + luckyBall + "<br>");
