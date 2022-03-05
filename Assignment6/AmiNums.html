@@ -1,0 +1,142 @@
+<!DOCTYPE HTML>
+
+<html>
+    <head>
+        <title>
+            Amicable Numbers
+        </title>
+        <meta name='viewport' content="width=device-width, initial-scale=1">
+        <style>
+            .box{
+                display:flex;
+                flex-direction:column;
+            }
+            #amiStatus{
+                color:green;
+                font-size:24pt;
+            }
+            #factors{
+                color:blue;
+                font-size:21pt;
+            }
+            input[type = 'button']{
+                    color:blue;
+                }
+            @media (max-width:600px){
+                input[type = 'button']{
+                    font-size:24pt;
+                    height:80px;
+                    width:120px;
+                }
+                .textBox{
+                    width:50%;
+                }
+                #aForm {
+                    max-width:600px;
+                }
+            }
+        </style>
+        <script>
+            function checkAmi(){
+                firstValue = Math.abs(parseInt(document.aForm.num1.value)); 
+                secondValue = Math.abs(parseInt(document.aForm.num2.value));
+                if (!validateInputs(firstValue, secondValue)){
+                    return;
+                }
+
+                //Factor and display
+                firstValFactorized = factorize(firstValue);
+                secondValFactorized = factorize(secondValue);
+                document.getElementById("factors").innerHTML = "Factors: <br>" + 
+                    firstValue + ": " + firstValFactorized + "<br>"
+                    + secondValue + ": " + secondValFactorized;
+                
+                //Sum values
+                sumFirst = sum(firstValFactorized);
+                sumSecond = sum(secondValFactorized);
+
+                //Outputs
+                if (sumFirst == secondValue && sumSecond == firstValue){
+                    document.getElementById("amiStatus").innerHTML = "The numbers " 
+                    + firstValue + " and " + secondValue + " are amicable";
+                }
+                else{
+                    document.getElementById("amiStatus").innerHTML = "The numbers " 
+                    + firstValue + " and " + secondValue + " are not amicable";
+                }
+                
+            }
+            //Recursive array summation function, original array consumed 
+            function sum(x){
+                if(x.length == 0){
+                    return 0;
+                }
+                temp = x.pop();
+                return temp + sum(x); 
+            }
+            //Validates that inputs are numbers, used following reference
+            //https://www.w3schools.com/jsref/jsref_isnan.asp
+            function validateInputs(x,y){
+                if(isNaN(x) || isNaN(y) || x == '' || y == ''){
+                    alert("Invalid Input: Please Input a number");
+                    return false;
+                }
+                return true;
+            }
+            //Factorize wrapper function, factorizes x
+            function factorize(x){
+                if (x == 0){
+                    return [0];
+                }
+                if (x == 1){
+                    return [1];
+                }
+                return helpFactorize(x,x-1,[]);    
+            }
+            //Recursive factorization function, checks if divisor is factor of x
+            //uses builtArray as parameter to represent final array returned
+            function helpFactorize(x,divisor,builtArray){
+                if (Math.abs(1-divisor) < 0.001){
+                    builtArray.push(1);
+                    return builtArray;
+                }
+                if (isAFactor(divisor,x)){
+                    builtArray.push(divisor);
+                    return helpFactorize(x,(divisor-1),builtArray);
+                }
+                else{
+                    return helpFactorize(x,(divisor-1),builtArray);
+                }
+            }
+            
+            //Confirms whether x is a factor of y 
+            function isAFactor(x,y){
+                if (y%x ==0){
+                    return true;
+                }
+                return false;
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Amicable Numbers</h1>
+        
+        <div class = "box">
+            <p>This website confirms whether integers under 8000 are amicable. 
+                Note that this comparison ignores signs.
+            </p>
+            <form name = "aForm" id = "aForm">
+                <input type = "text" name = "num1" id = "number1" class = "textBox" 
+                    placeholder = "First Number">
+                <input type = "text" name = "num2" id = "number2" class = "textBox" 
+                    placeholder = "Second Number">
+                <br>
+                <input type = "button" name = "enterButton" value = "Check" 
+                    id = "button1" onclick = "checkAmi()">
+            </form>
+            <div id = "amiStatus"></div>
+            <div id = "factors"></div>
+        </div>
+        
+    </body>
+</html>
