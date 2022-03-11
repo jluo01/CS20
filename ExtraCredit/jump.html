@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<head>
+    <title>JS Extra Credit: Jump and Check</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+
+    <script>
+        $(document).ready(
+            function () {
+                $("#switchButton").click(moveText);
+                $("#chkAll").click(checkAll);
+            }
+        )
+        //Issue with getting it to consistently overwrite text
+        function moveText(){
+            if (textPresent("#leftBox")){
+                $("#switchButton").attr("value","JUMP>"); 
+                $("#rightBox").val($("#leftBox").val());
+                $("#leftBox").val("");
+            }
+            else if (textPresent("#rightBox")){
+                $("#switchButton").attr("value", "<JUMP"); 
+                $("#leftBox").val($("#rightBox").val());
+                $("#rightBox").val("");
+            }
+        }
+        function textPresent(identifier){
+            if ($(identifier).val()!=''){
+                return true;
+            }
+            return false;
+        }
+        function checkAll(){
+            if (document.getElementById("chkAll").checked){
+                $("#chkAllText").html("Uncheck All");
+                document.getElementById("chkOne").checked = true;
+                document.getElementById("chkTwo").checked = true;
+                document.getElementById("chkThree").checked = true;
+                document.getElementById("chkFour").checked = true;
+            }
+            else{
+                $("#chkAllText").html("Check All");
+                document.getElementById("chkOne").checked = false;
+                document.getElementById("chkTwo").checked = false;
+                document.getElementById("chkThree").checked = false;
+                document.getElementById("chkFour").checked = false;
+            }
+        }
+    </script>
+
+</head>
+
+<body>
+    <h1>
+        JavaScript and jQuery extra credit: Jump and Check 
+    </h1>
+    <div>
+        <form>
+            <input type = "text" id = "leftBox">
+            <input type = "button" id = "switchButton" value = "JUMP>">
+            <input type = "text" id = "rightBox">
+        </form>
+    </div>
+    <!--https://www.w3schools.com/tags/att_input_type_checkbox.asp-->
+    <br>
+
+    <div>
+        <form>
+            <input type = "checkbox" name = "chkAll" id = "chkAll">
+            <label for="chkAll" id = "chkAllText">Check All</label>
+            <br>
+
+            <input type = "checkbox" id = "chkOne">
+            <label for="chkOne">first</label>
+            <br>
+
+            <input type = "checkbox" id = "chkTwo">
+            <label for="chkTwo">second</label>
+            <br>
+
+            <input type = "checkbox" id = "chkThree">
+            <label for="chkThree">third</label>
+            <br>
+
+            <input type = "checkbox" id = "chkFour">
+            <label for="chkFour">fourth</label>
+        </form>
+    </div>
+
+
+</body>
