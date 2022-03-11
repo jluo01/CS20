@@ -12,12 +12,12 @@
         )
         function moveText(){
             if (textPresent("#leftBox")){
-                $("#switchButton").attr("value","JUMP>"); 
+                $("#switchButton").attr("value","<JUMP"); 
                 $("#rightBox").val($("#leftBox").val());
                 $("#leftBox").val("");
             }
             else if (textPresent("#rightBox")){
-                $("#switchButton").attr("value", "<JUMP"); 
+                $("#switchButton").attr("value", "JUMP>"); 
                 $("#leftBox").val($("#rightBox").val());
                 $("#rightBox").val("");
             }
