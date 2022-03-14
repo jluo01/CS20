@@ -1,0 +1,71 @@
+[
+    {
+        "artists": ["Adele"],
+        "title": "Make You Feel My Love",
+        "genres":["Jazz Standard", "Special Dances"],
+        "year":"2010s"
+    },
+
+    {
+        "artists": ["Adele"],
+        "title": "Rollin In The Deep",
+        "genres":["Hot 100","Top 40"],
+        "year":"2010s"
+    },
+
+    {
+        "artists": ["Celine Dion"],
+        "title": "Because You Loved Me",
+        "genres":["Jazz Standard", "Special Dances"],
+        "year":"2000s"
+    },
+
+    {
+        "artists": ["Adele"],
+        "title": "Rollin In The Deep",
+        "genres":["Hot 100", "Top 40"],
+        "year":"2010s"
+    },
+
+    {
+        "artists": ["Chainsmokers"],
+        "title": "Closer",
+        "genres":["Hot 100", "Top 40"],
+        "year":"2010s"
+    },
+
+    {
+        "artists": ["Earth Wind & Fire"],
+        "title": "September",
+        "genres":["R&B"],
+        "year":"1970s"
+    },
+
+    {
+        "artists": ["Toto"],
+        "title": "Africa",
+        "genres":["Rock"],
+        "year":"1980s"
+    },
+    
+    {
+        "artists": ["Aretha Franklin"],
+        "title": "Ain't Nobody",
+        "genres":["R&B", "Motown"],
+        "year":"1980s"
+    },
+
+    {
+        "artists": ["Etta James"],
+        "title": "At Last",
+        "genres":["Jazz Standard", "Special Dances"],
+        "year":"1960s"
+    },
+
+    {
+        "artists": ["Michael Buble"],
+        "title": "Everything",
+        "genres":["Jazz Standard", "Special Dances"],
+        "year":"2000s"
+    }
+]
