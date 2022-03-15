@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta>
+        <title>JSON Song Viewer</title>
+        <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
+        <script>
+            genreArray = [];
+            $.get("https://jluo01.github.io/CS20/Assignment9/JSONSongs.json", 
+                function (theJSON) {
+                    str = JSON.stringify(theJSON);
+                    $("#rawString").html(str+"<br>");
+                    
+                    theJSON.forEach(function(song){
+                        //Part 3
+                        $("#userFriendly").append(song.title + "<br>");
+                        $("#userFriendly").append("Artist: " + song.artists + "<br>");
+                        $("#userFriendly").append("Genre: " + song.genres + "<br>");
+                        $("#userFriendly").append("Released " + song.year + "<br>");
+                        $("#userFriendly").append("<br>");
+                        
+                        // 
+                        for (i = 0; i < song.genres.length; i++){
+                            if (!genreArray.includes(song.genres[i])){
+                                genreArray.push(song.genres[i]);
+                            }
+                        }
+                    })
+                    //Load select options
+                    for (i = 0; i < genreArray.length; i++) {
+                        $("#genreSelect").append(makeOption(genreArray[i]));
+                    }
+                })
+            //Set up event listeners
+            $(document).ready(function(){
+                $("#filterButton").click(function(){
+                    index = document.getElementById("genreSelect").selectedIndex;
+                    genre = document.getElementById("genreSelect").options[index].value;
+                    filterResults(genre);
+                }
+                )
+            })
+            //Create options in select
+            function makeOption(name){
+                return "<option name = '" + name + "'>" + name + "</option>";
+            }
+            //only displays results with genre in filtered div (part 4)
+            function filterResults(genre){
+                $("#filtered").html("");
+                $.get("https://jluo01.github.io/CS20/Assignment9/JSONSongs.json", 
+                function (theJSON) {
+                    theJSON.forEach(function(song){
+                        for (i = 0; i < song.genres.length; i++){
+                            if (song.genres[i] == genre){
+                                $("#filtered").append(song.title + "<br>");
+                                $("#filtered").append("Artist: " + song.artists + "<br>");
+                                $("#filtered").append("Genre: " + song.genres + "<br>");
+                                $("#filtered").append("Released " + song.year + "<br>");
+                                $("#filtered").append("<br>");
+                            };
+                            continue;
+                        }
+                    }
+                    )
+
+                })
+            }
+        </script>
+        <style>
+            *{
+                font-family:Arial, Helvetica, sans-serif;
+            }
+            h2 {
+                color:green;
+            }
+            #rawString{
+                color:blue;
+            }
+            #filtered{
+                color:brown;
+            }
+            #filterButton{
+                width:50px;
+                height:25px;
+                background-color:azure;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>
+            JSON Song List
+        </h1>
+        <div>
+            <h2>Serialzied raw string: <br></h2>
+            <div id="rawString"></div>
+        </div>
+        <div>
+            <h2>User Friendly Display: <br></h2>
+            <div id = "userFriendly"></div>
+        </div>
+        <div>
+            <h2>Filtered Display: <br></h2>
+            <div>
+                <form id = "filterCriteria">
+                    <select id = "genreSelect"></select>
+                    <input type = "button" name = "filter" value = "Filter" id = "filterButton">
+                </form>
+                <div id = "filtered"></div>
+            </div> 
+            <br>
+        </div>
+    </body>
+</html>
