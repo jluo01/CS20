@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta>
+        <meta name='viewport' content="width=device-width, initial-scale=1">
         <title>JSON Song Viewer</title>
         <script   src="https://code.jquery.com/jquery-3.1.1.min.js"   integrity="sha256-hVVnYaiADRTO2PzUGmuLJr8BLUSjGIZsDYGmIJLv2b8="   crossorigin="anonymous"></script>
         <script>
@@ -19,7 +19,7 @@
                         $("#userFriendly").append("Released " + song.year + "<br>");
                         $("#userFriendly").append("<br>");
                         
-                        // 
+                         
                         for (i = 0; i < song.genres.length; i++){
                             if (!genreArray.includes(song.genres[i])){
                                 genreArray.push(song.genres[i]);
