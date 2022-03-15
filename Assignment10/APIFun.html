@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>API Fun</title>
+        <meta name='viewport' content="width=device-width, initial-scale=1">
+        <script>
+            //Get Example
+            function loadCheapActivity(){
+                request = new XMLHttpRequest();
+                request.open("GET", "http://www.boredapi.com/api/activity/?maxprice=0.5", true);
+
+                request.onreadystatechange = function(){
+                    if(request.readyState == 4 && request.status == 200){
+                        //Turn JSON string back into JSON object
+                        activityString = request.responseText;
+                        activityJSON = JSON.parse(activityString);
+
+                        //Turn JSON into output 
+                        document.getElementById("cheapActivity").innerHTML += activityParser(activityJSON);
+                    
+                    }
+                }
+                request.send();
+            }     
+            //Fetch Example   
+            function fetchExpensive(){
+                responseStream = fetch("http://www.boredapi.com/api/activity/?minprice=0.5")
+                    .then (responseStream => responseStream.text())
+                    .then (activityString => 
+                    {
+                        activityJSON = JSON.parse(activityString);//activity as JSON object
+                        
+                        document.getElementById("expensiveActivity").innerHTML += activityParser(activityJSON);
+                    })
+                .catch (error => console.log(error));
+            }
+
+            //Takes the most important information out of JSON response and
+            //makes it presentable 
+            function activityParser(activity){
+                outputString = "Activity: " + activityJSON.activity + "<br>";
+                outputString += "Participants: " + activityJSON.participants + "<br>";
+                outputString += "Type: " + activityJSON.type + "<br>";
+                outputString += "Price: " + activityJSON.price + "<br>";
+                outputString += "Accessibility: " + activityJSON.accessibility + "<br>";
+                return outputString;
+            }
+        </script>
+        <style>
+            *{
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            h2 {
+                color:blue;
+            }
+            #cheapActivity{
+                color:red;
+            }
+            #expensiveActivity{
+                color:green;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Bored API Demonstrator</h1>
+        <div>
+            <ul>
+                <li>What the API does: The Bored API provides suggestions of things to do if one is bored. The API allows the user 
+                    to add queries to specify the kinds of activities suggested. Queries include price and number of participants. 
+                </li>
+                <li>Website where I found it: https://mixedanalytics.com/blog/list-actually-free-open-no-auth-needed-apis/ </li>
+                <li>Describe the options: I added queries specifying a min and max price for the activity.</li>
+                <li>Two Applications where it would be useful:
+                    <ul>
+                        <li>Fun Quiz: a developer wants to create a quiz that suggests fun activities to the user. 
+                            The developer could make a quiz that translates the user input into queries put into the API, creating 
+                            a more tailored activity suggestion.  
+                        </li>
+                        <li>Activity of the Day: a company retreat might want to have suggestions for bonding activities. The 
+                            company could develop a company retreat website that shows the activity of the day as suggested by the API
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+
+        <h2>AJAX - Choose a cheap activity: ?maxprice=0.5</h2>
+        <div id = "cheapActivity"></div>
+        <h2>Fetch - Choose an expensive activity: ?minprice=0.5</h2>
+        <div id = "expensiveActivity"></div>
+        <script>
+            fetchExpensive();
+            loadCheapActivity();
+        </script>
+    </body>
+</html>
