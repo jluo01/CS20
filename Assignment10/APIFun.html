@@ -7,7 +7,7 @@
             //Get Example
             function loadCheapActivity(){
                 request = new XMLHttpRequest();
-                request.open("GET", "http://www.boredapi.com/api/activity/?maxprice=0.5", true);
+                request.open("GET", "https://www.boredapi.com/api/activity/?maxprice=0.5", true);
 
                 request.onreadystatechange = function(){
                     if(request.readyState == 4 && request.status == 200){
@@ -24,7 +24,7 @@
             }     
             //Fetch Example   
             function fetchExpensive(){
-                responseStream = fetch("http://www.boredapi.com/api/activity/?minprice=0.5")
+                responseStream = fetch("https://www.boredapi.com/api/activity/?minprice=0.5")
                     .then (responseStream => responseStream.text())
                     .then (activityString => 
                     {
