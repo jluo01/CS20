@@ -2,7 +2,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>Jade Delight</title>
-        
+
         <!-- JYL Code Starts Below:  -->
         <script src="https://code.jquery.com/jquery-3.6.0.js" 
             integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" 
@@ -53,7 +53,7 @@
             function updateCost(selectIndex){
                 totalCostIndex = rowOffset + (2*selectIndex); 
                 if(parseInt(document.forms[0]["quan"+selectIndex].value) == 0){
-                    document.forms[0].elements[totalCostIndex].value = "";
+                    document.forms[0].elements[totalCostIndex].value = "0.00";
                 }
                 else{
                     cost = menuItems[selectIndex].cost * document.forms[0]["quan"+selectIndex].value;
