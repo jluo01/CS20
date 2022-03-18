@@ -77,7 +77,7 @@
             function formValidate(){
                 [valid,time] = formValidateChecks();
                 if (valid){
-                    alert("Successfully Ordered!");
+                    alert("Successfully Ordered - thank you!");
                     newTab = window;
                     outputString = getOrderDetails(time);
                     newTab.open().document.write(outputString);
