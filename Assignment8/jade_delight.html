@@ -163,6 +163,10 @@
                     currentHr++;
                 }
                 currentHr = currentHr%24;
+                if (currentMin < 10){
+                    currentMin = "0" + currentMin;
+                }
+
                 return currentHr + ":" + currentMin;
             }
         
