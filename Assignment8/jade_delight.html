@@ -20,9 +20,8 @@
             taxIdx = 18;
             totalIdx = 19;
             submitIdx = 20;
-            
-            //Key Reference: https://www.w3schools.com/js/js_validation.asp
-            //https://www.w3schools.com/html/html_classes.asp multiple classes
+
+
             $(document).ready(function(){
                 //When a user selects a quanitity 
                 $(".selectQuantity").change(function(){
@@ -82,7 +81,6 @@
                     newTab.open().document.write(outputString);
                 }
             }
-            //https://www.w3schools.com/jsref/obj_window.asp
             function formValidateChecks(){
                 returnArray = [];
                 deliveryStatus = document.forms[0].elements[deliveryIdx].checked;
@@ -185,10 +183,11 @@
             }
         </script>        
         <style>
-            input[type=text]{
+            label{
                 /* align-items: center; */
-                display:inline-block;
-
+                display: inline-block;
+                width: 100px;
+                text-align:left ;
             }
             .address{
                 display:none;
@@ -199,13 +198,11 @@
 <body>
 
     <script>    
-        //Menu Item Constructor
         function MenuItem(name, cost)
         {
             this.name = name;
             this.cost=cost;
         }
-        //Global array of MenuItems
         menuItems = new Array(
             new MenuItem("Chicken Chop Suey", 4.5),
             new MenuItem("Sweet and Sour Pork", 6.25),
@@ -213,7 +210,6 @@
             new MenuItem("Moo Shi Chicken", 7.5),
             new MenuItem("Fried Rice", 2.85)
         );
-        //Makes a string representing a select with name, min and max range for dropdown
         function makeSelect(name, minRange, maxRange)
         {
             var t= "";
@@ -234,10 +230,10 @@
     
     <form>
         <p class="userInfo"><label>First Name:</label> <input type="text"  name='fname' /></p>
-        <p class="userInfo"><label>Last Name*</label>:  <input type="text"  name='lname' /></p>
-        <p class="userInfo address"><label>Street*</label>: <input type="text" name='street' /></p>
-        <p class="userInfo address"><label>City*</label>: <input type="text" name='city' /></p>
-        <p class="userInfo"><label>Phone*</label>: <input type="text"  name='phone' /></p>
+        <p class="userInfo"><label>Last Name*:</label>  <input type="text"  name='lname' /></p>
+        <p class="userInfo address"><label>Street*:</label> <input type="text" name='street' /></p>
+        <p class="userInfo address"><label>City*:</label> <input type="text" name='city' /></p>
+        <p class="userInfo"><label>Phone*:</label> <input type="text"  name='phone' /></p>
         <p> 
             <input type="radio"  name="p_or_d" value = "pickup" checked="checked"/>Pickup  
             <input type="radio"  name='p_or_d' value = 'delivery'/>
@@ -253,10 +249,10 @@
 
             <script>
                 var s = "";
-                for (i=0; i< menuItems.length; i++)//makes the rows of the table
+                for (i=0; i< menuItems.length; i++)
                 {
                     s += "<tr>";
-                    s += td(makeSelect("quan" + i, 0, 10),"selectQuantity");//select named quan0, quan1, etc. housed in a table data with class .selectQuanitity 
+                    s += td(makeSelect("quan" + i, 0, 10),"selectQuantity");
                     s += td(menuItems[i].name, "itemName");
                     s += td("$" +menuItems[i].cost.toFixed(2), "cost");
                     s += td("$<input type='text' name='cost'/>", "totalCost");
@@ -266,7 +262,7 @@
             </script>
         </table>
 
-        <p class="subtotal totalSection"><label>Subtotal</label>: 
+        <p class="subtotal totalSection"><label>Subtotal:</label>
         $ <input type="text"  name='subtotal' id="subtotal" />
         </p>
         <p class="tax totalSection"><label>Mass tax 6.25%:</label>
