@@ -236,6 +236,7 @@
                     return $this->cost;
                 }
             }
+            //Returns array of MenuItem objects
             function getSQLData(){
                 $server = "localhost";
                 $username = "uppqrahq9rfbh";

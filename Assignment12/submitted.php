@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Thanks for Ordering</title>
+        <title>Thanks for Ordering!</title>
         <style>
             h1,h2{
                 color:gold;
@@ -46,7 +46,6 @@
                 }
             }
             function getSQLData(){
-                //https://www.siteground.com/tutorials/php-mysql/connect-database/
                 $server = "localhost";
                 $username = "uppqrahq9rfbh";
                 $password = "r2$2&JdT:4%1";
